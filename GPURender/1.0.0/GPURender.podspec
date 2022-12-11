@@ -24,7 +24,8 @@ TODO: Add long description of the pod here.
   s.homepage         = 'https://github.com/rgbaapp/GPURender'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'machenshuang' => 'chenshuangma@foxmail.com' }
-  s.source           = { :git => 'https://github.com/rgbaapp/GPURender.git', :tag => s.version.to_s }
+  #s.source           = { :git => 'https://github.com/rgbaapp/GPURender.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/rgbaapp/GPURender.git', :branch => 'main' }
 
   s.ios.deployment_target = '11.0'
   s.source_files = 'iOS/libs/GPURender.framework/Headers/**/*.{h}'
