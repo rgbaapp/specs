@@ -26,15 +26,19 @@ TODO: Add long description of the pod here.
   s.author           = { 'machenshuang' => 'chenshuangma@foxmail.com' }
   #s.source           = { :git => 'https://github.com/rgbaapp/GPURender.git', :tag => s.version.to_s }
   s.source           = { :git => 'https://github.com/rgbaapp/GPURender.git', :branch => 'main' }
-
-  s.ios.deployment_target = '11.0'
-  s.source_files = 'iOS/libs/GPURender.framework/Headers/**/*.{h}'
-  s.vendored_frameworks = 'iOS/libs/GPURender.framework'
-  s.public_header_files = 'iOS/libs/GPURender.framework/Headers'
-  s.frameworks = 'OpenGLES'
   
   s.pod_target_xcconfig = {
     'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
   }
-  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  s.user_target_xcconfig = {
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64',
+    'HEADER_SEARCH_PATHS' => '${PODS_ROOT}/GPURender/iOS/libs/GPURender.framework/Headers'
+}
+  
+  s.ios.deployment_target = '11.0'
+  #s.source_files = 'iOS/libs/GPURender.framework/Headers/**/*.{h}'
+  s.vendored_frameworks = 'iOS/libs/GPURender.framework'
+  #s.public_header_files = 'iOS/libs/GPURender.framework/Headers'
+  s.frameworks = 'OpenGLES'
+  
 end
