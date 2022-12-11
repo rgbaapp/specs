@@ -32,13 +32,11 @@ TODO: Add long description of the pod here.
   }
   s.user_target_xcconfig = {
     'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64',
-    'HEADER_SEARCH_PATHS' => '${PODS_ROOT}/GPURender/iOS/libs/GPURender.framework/Headers'
-}
+    'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/GPURender/iOS/libs/GPURender.xcframework/ios-arm64/GPURender.framework/Headers"'
+  }
   
   s.ios.deployment_target = '11.0'
-  #s.source_files = 'iOS/libs/GPURender.framework/Headers/**/*.{h}'
-  s.vendored_frameworks = 'iOS/libs/GPURender.framework'
-  #s.public_header_files = 'iOS/libs/GPURender.framework/Headers'
+  s.vendored_frameworks = 'iOS/libs/GPURender.xcframework'
   s.frameworks = 'OpenGLES'
   
 end
